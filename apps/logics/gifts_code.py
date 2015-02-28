@@ -16,11 +16,15 @@ class GiftsCodeLogic(object):
 
         gift = GiftsCode(email, code)
 
+        if(GiftsCode.exists(email)):
+            print 'email has exist.'
+            return False
+
         try:
-            gift.session.add(gift)
-            gift.session.commit()
+            gift.save()
             return True
         except Exception, e:
+            print 'Exception', e.message
             return False
 
 

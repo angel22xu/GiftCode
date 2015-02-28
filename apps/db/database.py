@@ -21,3 +21,5 @@ DB_ENGINE = create_engine(DB_INFO, echo = DB_ECHO, encoding = DB_ENCODING, pool_
 Base = declarative_base()
 
 Session = sessionmaker(bind=DB_ENGINE)
+
+session = Session()
