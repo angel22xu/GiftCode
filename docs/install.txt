@@ -1,0 +1,4 @@
+１、Nginxを起動する
+２、Tornadoを起動する
+３、FireWallをcloseする
+４、MySQLを起動する

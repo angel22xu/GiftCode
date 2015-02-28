@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gift</title>
+        <script type="text/javascript" src="{{ static_url('js/jquery-1.11.2.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#submit").click(function(){
+                    var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+                    if(!reg.test($("#email").val())){
+                        $("#code").html("<label style='color:red'>メールアドレスを入力してください。</label>");
+                        return false;
+                    }
+                    $.post("/giftscode", 
+                    {
+                        email: $("#email").val()
+                    },
+                    function(data, status){
+                        if(data.result == "OK"){
+                            $("#code").html("ギフトコード: " + data.code);
+                        }
+                        else{
+                            $("#code").html("<label style='color:red'>他のメールアドレスを入力してください。</label>");
+                        }
+                    });
+                }); 
+            });
+        </script>
+    </head>
+    <body>
+        <div>get gift code<div>
+        <br />
+        <div id="code"></div>
+        <label>Input the email address</label>
+        <input type="text" id="email" name="email"/>
+        <input type="button"  value="submit" id="submit"/>
+    </body>
+</html>
