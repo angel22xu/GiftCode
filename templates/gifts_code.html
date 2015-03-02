@@ -6,8 +6,12 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#submit").click(function(){
+                    $("#code").css("display", "none");
+                    $("img").css("display", "block");
                     var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
                     if(!reg.test($("#email").val())){
+                        $("img").css("display", "none");
+                        $("#code").css("display", "block");
                         $("#code").html("<label style='color:red'>メールアドレスを入力してください。</label>");
                         return false;
                     }
@@ -16,6 +20,8 @@
                         email: $("#email").val()
                     },
                     function(data, status){
+                        $("img").css("display", "none");
+                        $("#code").css("display", "block");
                         if(data.result == "OK"){
                             $("#code").html("ギフトコード: " + data.code);
                         }
@@ -30,9 +36,26 @@
     <body>
         <div>get gift code<div>
         <br />
+        <img src="{{static_url('image/loading.gif')}}" width="50px" height="50px" style="display:none"/>
         <div id="code"></div>
         <label>Input the email address</label>
         <input type="text" id="email" name="email"/>
         <input type="button"  value="submit" id="submit"/>
+        <!-- <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div> -->
+        <br />
+        <div class="fb-share-button" data-href="http://192.168.2.7/giftscode" data-layout="button"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="jinwyp">Tweet</a>
+        <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
     </body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 </html>
+
+

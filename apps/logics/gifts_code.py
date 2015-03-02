@@ -5,6 +5,7 @@ import uuid
 import tornado.web
 
 from apps.models.gifts_code import GiftsCode
+from apps.logics.mail import Mail
 
 class GiftsCodeLogic(object):
 
@@ -21,10 +22,12 @@ class GiftsCodeLogic(object):
             return False
 
         try:
-            gift.save()
-            return True
+            # send code to the target email
+            if (Mail.send(email, code)):
+                gift.save()
+                return True
+            else:
+                return False
         except Exception, e:
             print 'Exception', e.message
             return False
-
-
