@@ -18,7 +18,7 @@ from apps.url import url
 settings = dict(
     debug=True,
     template_path=os.path.join(TOP_DIR, 'templates'),
-    static_path=os.path.join(TOP_DIR, "static")    
+    static_path=os.path.join(TOP_DIR, "static")
 )
 
 
