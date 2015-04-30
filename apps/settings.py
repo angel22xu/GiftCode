@@ -4,10 +4,10 @@
 
 #define the database
 DB_ACCOUNT_PASSWORD = {
-	'master': ('root', '', '127.0.0.1', 'rk')  # username, password, host, db
+	'master': ('root', '123', '127.0.0.1', 'rk')  # username, password, host, db
 }
 
 #gmail設定
-FRROMADDR = '******@gmail.com'
-MAIL_USERNAEME = '***********'
-MAIL_PASSWORD = '*************'
+FRROMADDR = 'XXXXXXXX@gmail.com'
+MAIL_USERNAEME = 'XXXXXXXX'
+MAIL_PASSWORD = 'XXXXXXX'

@@ -1,4 +1,18 @@
 １、Nginxを起動する
+    [vagrant@localhost download]$ sudo /usr/local/nginx/sbin/nginx 
+    
 ２、Tornadoを起動する
+    [vagrant@localhost tornado]$ pwd
+    /vagrant/pythonTest/tornado
+    [vagrant@localhost tornado]$ ./start.sh 
+    Web start success!
+
 ３、FireWallをcloseする
+    [vagrant@localhost download]$ sudo service iptables stop
+    iptables: Flushing firewall rules:                         [  OK  ]
+    iptables: Setting chains to policy ACCEPT: filter          [  OK  ]
+    iptables: Unloading modules:                               [  OK  ]
+
 ４、MySQLを起動する
+    [vagrant@localhost download]$ sudo service mysql start
+    Starting MySQL (Percona Server) SUCCESS! 
