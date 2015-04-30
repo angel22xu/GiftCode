@@ -1,0 +1,1 @@
+http://maijunjin.github.io/git/2013/09/13/git-generate-ssh-key.html
