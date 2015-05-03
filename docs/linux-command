@@ -1,1 +1,7 @@
-sudo netstat -ntlp
+netstat -ntlp
+
+chkconfig --list
+chkconfig <service> on
+chkconfig <service> off
+
+
