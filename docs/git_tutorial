@@ -11,3 +11,5 @@ git rebase -i HEAD~4 --aboveAll
 
 #1
 #2
+
+git commit
