@@ -3,7 +3,6 @@ git clone
 
 git checkout HEAD^
 git branch -f master C6
-git branch -f bugFix C0
 
 
 git cherry-pick <commit1> <commit2>
