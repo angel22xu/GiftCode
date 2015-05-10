@@ -1,0 +1,3 @@
+[submodule "static/css/sass"]
+	path = static/css/sass
+	url = https://github.com/sass/sass.git
