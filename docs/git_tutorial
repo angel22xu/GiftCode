@@ -15,3 +15,8 @@ git rebase -i HEAD~4 --aboveAll
 git commit
 3#
 git branch <newbranchName>
+
+$ git rebase master bugFix
+$ git rebase bugFix side
+$ git rebase side another
+$ git branch -f master C7'
