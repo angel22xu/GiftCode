@@ -9,3 +9,15 @@ git branch -f bugFix C0
 git cherry-pick <commit1> <commit2>
 
 git rebase -i HEAD~4 --aboveAll
+
+#1
+#2
+
+git commit
+3#
+git branch <newbranchName>
+
+$ git rebase master bugFix
+$ git rebase bugFix side
+$ git rebase side another
+$ git branch -f master C7'
